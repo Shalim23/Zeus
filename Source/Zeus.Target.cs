@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Copyright@ Shalimov Dmytro 23.04.1991 Kyiv Ukraine
 
 using UnrealBuildTool;
 using System.Collections.Generic;

@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright@ Shalimov Dmytro 23.04.1991 Kyiv Ukraine
 
 
 #include "ZeusGameInstance.h"
