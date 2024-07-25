@@ -8,6 +8,7 @@
 
 class UCameraComponent;
 class USpringArmComponent;
+class UInputMappingContext;
 
 UCLASS()
 class ZEUS_API ACoreCharacter : public ACharacter
@@ -28,4 +29,6 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	TObjectPtr<USpringArmComponent> CameraArm_;
 
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Input")
+    TSoftObjectPtr<UInputMappingContext> InputMapping;
 };

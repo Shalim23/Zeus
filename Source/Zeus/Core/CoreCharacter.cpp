@@ -4,6 +4,8 @@
 #include "CoreCharacter.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "EnhancedInputSubsystems.h"
+#include "InputMappingContext.h"
 
 ACoreCharacter::ACoreCharacter()
 {
@@ -25,4 +27,12 @@ void ACoreCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+    {
+        ULocalPlayer* Player{GetWorld()->GetFirstLocalPlayerFromController()};
+        check(Player);
+        UEnhancedInputLocalPlayerSubsystem* EnhancedInputSystem{Player->GetSubsystem<UEnhancedInputLocalPlayerSubsystem>()};
+        check(EnhancedInputSystem);
+        check(InputMapping);
+        EnhancedInputSystem->AddMappingContext(InputMapping.LoadSynchronous(), 0);
+    }
 }
