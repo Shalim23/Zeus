@@ -32,7 +32,7 @@ void ACoreCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
         check(Player);
         UEnhancedInputLocalPlayerSubsystem* EnhancedInputSystem{Player->GetSubsystem<UEnhancedInputLocalPlayerSubsystem>()};
         check(EnhancedInputSystem);
-        check(InputMapping);
+        check(!InputMapping.IsNull());
         EnhancedInputSystem->AddMappingContext(InputMapping.LoadSynchronous(), 0);
     }
 }
