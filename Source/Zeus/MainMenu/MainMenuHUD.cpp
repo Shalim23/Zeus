@@ -10,7 +10,7 @@ void AMainMenuHUD::BeginPlay()
 {
     Super::BeginPlay();
 
-    check(MainMenuWidgetClass_);
+    check(!MainMenuWidgetClass_.IsNull());
 
     FStreamableManager& StreamableManager{UAssetManager::GetStreamableManager()};
     
